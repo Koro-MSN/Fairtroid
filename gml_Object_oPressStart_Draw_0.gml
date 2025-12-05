@@ -1,0 +1,11 @@
+draw_set_font(global.fontGUI2);
+draw_set_halign(fa_center);
+
+if (os_type != os_android)
+    draw_cool_text(x, y, pr_start_str, 16777215, 0, 32768, image_alpha);
+else if (global.joydetected == 0)
+    draw_cool_text(x, y, to_start_str, 16777215, 0, 32768, image_alpha);
+else
+    draw_cool_text(x, y, pr_start_str, 16777215, 0, 32768, image_alpha);
+
+draw_set_halign(fa_left);

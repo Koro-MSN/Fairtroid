@@ -1,0 +1,4 @@
+roaring = 15;
+sfx_play(325);
+var proj = instance_create(x, y, oErisProjectile);
+proj.direction = point_direction(x, y, oCharacter.x, oCharacter.y - (oCharacter.sprite_height / 2));

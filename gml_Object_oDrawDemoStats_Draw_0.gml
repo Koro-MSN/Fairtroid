@@ -1,0 +1,13 @@
+draw_set_color(c_black);
+draw_set_alpha(0.8);
+draw_rectangle(x, y, x + 320, y + 80, false);
+draw_set_alpha(1);
+draw_set_font(global.fontGUI2);
+draw_cool_text(x + 4, y - 12, "Your Stats:", 0, 16777215, 255, 1);
+draw_cool_text(x + xoff, y + yoff + sep, "Items: " + string(global.itemstaken) + "/25", 0, 16777215, 16711680, 1);
+draw_cool_text(x + xoff, y + yoff + (sep * 2), "Kills: " + string(global.kills), 0, 16777215, 16711680, 1);
+draw_cool_text(x + xoff, y + yoff + (sep * 3), "Crocomire Battle Time: " + string(ctext), 0, 16777215, 8421504, 1);
+draw_cool_text(x + xoff, y + yoff + (sep * 4), "Kraid Battle Time: " + string(ktext), 0, 16777215, 8421504, 1);
+draw_cool_text(x + xoff, y + yoff + (sep * 5), "Ridley Battle Time: " + string(rtext), 0, 16777215, 8421504, 1);
+draw_cool_text(x + xoff, y + yoff + (sep * 6), "Total Time: " + string(timetext), 0, 16777215, 65535, 1);
+draw_cool_text(x + 4, y + 96, "See you next mission", 0, 16777215, 32768, 1);

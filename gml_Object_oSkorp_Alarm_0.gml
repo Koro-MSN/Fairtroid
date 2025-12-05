@@ -1,0 +1,32 @@
+if (frozen == 0)
+{
+    if (distance_to_object(oCharacter) < 80)
+    {
+        alarm[3] = 20;
+        
+        if (instance_exists(lure))
+        {
+            lure.image_index = 0;
+            
+            switch (image_angle)
+            {
+                case 270:
+                case 90:
+                    lure.sprite_index = skorp_get_lure(1676);
+                    break;
+                
+                default:
+                    lure.sprite_index = skorp_get_lure(1673);
+                    break;
+            }
+        }
+    }
+    else
+    {
+        alarm[0] = 10;
+    }
+}
+else
+{
+    alarm[1] = 10;
+}

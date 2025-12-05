@@ -1,0 +1,17 @@
+met = instance_create(x, y, oMAlpha);
+met.facing = facing;
+met.myid = myid;
+met.spriteset = 0;
+
+with (met)
+{
+    set_monster_vars(myid);
+    shell = instance_create(x, y, oMAlphaShell);
+    shell.damage = damage;
+    shell.hpush = 5;
+    shell.vpush = -3;
+}
+
+sfx_play(130);
+global.monstersalive = 1;
+instance_destroy();

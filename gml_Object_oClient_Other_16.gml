@@ -1,0 +1,14 @@
+var size = 1024;
+var type = 1;
+var alignment = 1;
+buffer8 = buffer_create(size, type, alignment);
+buffer_seek(buffer8, buffer_seek_start, 0);
+buffer_write(buffer8, buffer_u8, 33);
+buffer_write(buffer8, buffer_u8, global.lobbyLocked);
+var bufferSize = buffer_tell(buffer8);
+buffer_seek(buffer8, buffer_seek_start, 0);
+buffer_write(buffer8, buffer_s32, bufferSize);
+buffer_write(buffer8, buffer_u8, 33);
+buffer_write(buffer8, buffer_u8, global.lobbyLocked);
+var result = network_send_packet(socket, buffer8, buffer_tell(buffer8));
+buffer_delete(buffer8);
